@@ -58,7 +58,7 @@ Create an issue:
 
 Work in branch `feature/architecture` (or similar).
 
-1. In `src/architecture.md`, write:
+1. In `docs/architecture.md`, write:
     
     1. **Product choice (5–7 sentences)**
         
@@ -133,7 +133,7 @@ Work in branch `feature/architecture` (or similar).
     
     ```bash
     git checkout -b feature/architecture
-    git add src/architecture.md
+    git add docs/architecture.md
     git commit -m "describe modules and data flow for <product>"
     git push -u origin feature/architecture
     ```
@@ -180,7 +180,7 @@ Work on the same product.
     
     - `diagrams/architecture.drawio` (or equivalent).
         
-3. Add a short caption inside `src/architecture.md`:
+3. Add a short caption inside `docs/architecture.md`:
     
     ```markdown
     ## Diagram
@@ -323,7 +323,7 @@ You will act as both **author** and **reviewer**.
     
     - Create two **PRs** that:
         
-        - Adds `src/architecture.md` with the diagram.
+        - Adds `docs/architecture.md` with the diagram.
             
         - Adds `src/roles-and-skills.md`.
             
