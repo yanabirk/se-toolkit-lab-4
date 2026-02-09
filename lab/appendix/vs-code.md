@@ -47,11 +47,10 @@ Default user interface (UI).
 
 ![Basic Layout](../images/vs-code-ui.drawio.svg)
 
-<!-- 
 The schema is based on:
-- https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout
-- https://code.visualstudio.com/api/ux-guidelines/overview
--->
+
+- [Basic layout](https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout)
+- [UX Guidelines](https://code.visualstudio.com/api/ux-guidelines/overview)
 
 ## `Custom Layout`
 
