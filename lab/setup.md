@@ -15,6 +15,7 @@
   - [12. (Optional, `Windows` only) Install WSL](#12-optional-windows-only-install-wsl)
   - [13. Open `VS Code` in the `software-engineering-toolkit` directory](#13-open-vs-code-in-the-software-engineering-toolkit-directory)
   - [14. (Windows only) Set the default shell](#14-windows-only-set-the-default-shell)
+  - [15. Install `uv`](#15-install-uv)
   - [15. Configure `Git`](#15-configure-git)
   - [16. Copy your fork URL](#16-copy-your-fork-url)
   - [17. Clone the fork on your computer](#17-clone-the-fork-on-your-computer)
@@ -172,6 +173,12 @@ Complete these steps:
    <img alt="Terminal Bash" src="./images/appendix/vs-code/terminal-bash.png" style="width:400px"></img>
 
 <!-- TODO check how it looks like on windows -->
+
+### 15. Install `uv`
+
+Follow the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) for your platform (`Windows`, `Linux`, `macOS`).
+
+[Run the command using the `Terminal`](./appendix/vs-code.md#run-a-command-using-the-terminal).
 
 ### 15. Configure `Git`
 
