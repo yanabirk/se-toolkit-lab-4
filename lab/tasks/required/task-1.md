@@ -20,6 +20,7 @@ Then, you can check whether the web server works before the web server is deploy
 - [3. View the file `.env.no-docker.example`](#3-view-the-file-envno-dockerexample)
 - [4. Create the file `.env.secret`](#4-create-the-file-envsecret)
 - [5. View the file `.env.secret`](#5-view-the-file-envsecret)
+- [6. Use a free `$PORT`](#6-use-a-free-port)
 - [6. Run the web server using `uv` and `poe`](#6-run-the-web-server-using-uv-and-poe)
 - [7. Check `/status`](#7-check-status)
   - [Check `/status` using a browser](#check-status-using-a-browser)
@@ -71,6 +72,30 @@ Method 1:
 Method 2:
 
 1. [Open the file using the `Command Palette`](../../appendix/vs-code.md#open-a-file-using-the-command-palette): [`.env.secret`](../../../.env.no-docker.example).
+
+## 6. Use a free `$PORT`
+
+> [!NOTE]
+> `$PORT` here will be substituted with the value of the `PORT` environment variable from the `.env.secret` file.
+>
+> The `kport inspect $PORT` command will be run in the [`bash`](../../appendix/linux.md#bash) shell.
+
+1. Inspect what's running on `$PORT`:
+
+   [Run using the `Terminal`](../../appendix/vs-code.md#run-a-command-using-the-terminal):
+
+   ```terminal
+   uv run --env-file .env.secret bash -c 'kport inspect $PORT'
+   ```
+
+2. You should see something like `Port 42000 is free`.
+3. If you see `Process: python3`:
+   1. It's probably the web server running if you tried running it before.
+   2. You can safely [force stop it](#9-force-stop-the-web-server).
+4. Otherwise:
+   1. Go to the `.env.secret` file.
+   2. Write another value for `PORT`, e.g., `41000`.
+   3. Inspect what's running on the new `$PORT` (`41000`) as explained above.
 
 ## 6. Run the web server using `uv` and `poe`
 
