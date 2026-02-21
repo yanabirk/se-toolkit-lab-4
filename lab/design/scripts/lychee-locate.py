@@ -4,6 +4,7 @@
 import json
 import re
 import sys
+from pathlib import Path
 
 from pydantic import BaseModel
 
@@ -21,7 +22,7 @@ class _LycheeOutput(BaseModel):
     error_map: dict[str, list[_LinkError]] = {}
 
 
-def find_line(filepath: str, url: str) -> int | None:
+def find_location(filepath: str, url: str) -> tuple[int, int] | None:
     # lychee normalizes relative file links to absolute file:// URLs.
     # Reconstruct a searchable pattern from just the basename + fragment.
     if url.startswith("file://"):
@@ -34,8 +35,15 @@ def find_line(filepath: str, url: str) -> int | None:
     try:
         with open(filepath) as f:
             for i, line in enumerate(f, 1):
-                if pattern.search(line):
-                    return i
+                m = pattern.search(line)
+                if m:
+                    start = m.start()
+                    # Adjust for a relative path prefix (e.g. "./" or "../") that
+                    # precedes the basename but was stripped when we split on "/".
+                    prefix_match = re.search(r'(?:\.\.?/)+$', line[:start])
+                    if prefix_match:
+                        start = prefix_match.start()
+                    return i, start + 1
     except (OSError, UnicodeDecodeError):
         pass
     return None
@@ -51,9 +59,13 @@ if not data.error_map:
     sys.exit(0)
 
 for filepath, errors in data.error_map.items():
+    try:
+        relpath = Path(filepath).relative_to(Path.cwd())
+    except ValueError:
+        relpath = Path(filepath)
     for error in errors:
-        lineno = find_line(filepath, error.url)
-        location = f"{filepath}:{lineno}" if lineno else filepath
+        loc = find_location(filepath, error.url)
+        location = f"{relpath}:{loc[0]}:{loc[1]}" if loc else str(relpath)
         print(f"{location}: [ERROR] {error.url}")
         print(f"  {error.status.text}")
 
