@@ -298,12 +298,12 @@ Title: `[Task] <Task title>`
 
 ### 4.1. Instructions wording
 
-| Action             | Wording                             |
-| ------------------ | ----------------------------------- |
-| Navigate somewhere | `Go to X.`                          |
-| Click something    | `Click X.`                          |
-| Choose an option   | `Use any of the following methods:` |
-| Complete all steps | `Complete the following steps:`     |
+| Action             | Wording                                        |
+| ------------------ | ---------------------------------------------- |
+| Navigate somewhere | `Go to X.`                                     |
+| Click something    | `Click X.`                                     |
+| Choose an option   | `Method N:` prefix (see [4.6](#46-little-toc)) |
+| Complete all steps | `Complete the following steps:`                |
 
 - **Split compound instructions.** Never write "Do A and do B." Instead, split into two numbered steps.
 - **Finish complete sentences with a `.`**
@@ -331,8 +331,8 @@ Write each command for the `VS Code Terminal` in a multi-line code block with th
 
 Clearly differentiate:
 
-- **Options:** "Use any of the following methods:" (then list methods)
-- **Steps:** "Complete the following steps:" (then list steps in order)
+- **Options:** List with `Method N:` prefix (see [4.6](#46-little-toc)).
+- **Steps:** "Complete the following steps:" (then list steps in order).
 
 ### 4.5. Ordered lists
 
@@ -340,17 +340,16 @@ Each ordered list must use `1. 2. 3.`, **not** `1. 1. 1.`.
 
 ### 4.6. Little ToC
 
-Provide a little table of contents when the list of options or steps is long:
+Provide a little table of contents when the list of options or steps is long. Use `Method N:` prefixes with full heading text as the link:
 
 ```markdown
-Use any of the following methods:
+<!-- no toc -->
+- Method 1: [Do X using the `VS Code Terminal`](#do-x-using-the-vs-code-terminal)
+- Method 2: [Do X using `GitLens`](#do-x-using-gitlens)
 
-- [Method 1](#method-1)
-- [Method 2](#method-2)
+### Do X using the `VS Code Terminal`
 
-### Method 1
-
-### Method 2
+### Do X using `GitLens`
 ```
 
 Don't provide a little ToC when all lists of items are short.
