@@ -1,4 +1,4 @@
-# Lab 3 — REST API, Database, and Security
+# Lab 4 — Testing, Front-end, and AI Agents
 
 > [!CAUTION]
 > The lab is UNDER CONSTRUCTION!!
@@ -16,22 +16,15 @@
 
 ## Lab story
 
-You were hired by a company that develops a novel e-learning system.
+You are on the back-end team for the **Learning Management Service**.
 
-The system recommends educational resources to students.
-
-You joined a [back end](https://roadmap.sh/backend) team working on a web server for the **Learning Management Service**.
-
-The web server is implemented using the [`FastAPI`](https://fastapi.tiangolo.com/) framework in [`Python`](https://www.python.org/) and uses a [`PostgreSQL`](https://www.postgresql.org/) database.
-
-The prototype works and is deployed. Now the team needs to make it production-ready: understand the API contract, expose interaction logs, add a new endpoint for learners, secure the service, and deploy it on a hardened VM.
+The `API` is deployed and secured. Now the team wants to prove it works with real tests, add a front-end so users can interact with the data, and establish the habit of using AI agents as development tools.
 
 A senior engineer explains your next assignment:
 
-> 1. Explore the API documentation and learn how to authenticate.
-> 2. Enable and debug the broken `/interactions` endpoint.
-> 3. Implement the `/learners` endpoint using the existing pattern.
-> 4. Deploy the secured service to a hardened VM.
+> 1. Redeploy the back-end and observe how requests flow from `Swagger` through the `API` to the database.
+> 2. Write unit and end-to-end tests, discover existing bugs, and fix them.
+> 3. Add a front-end to the system and modify it using an AI coding agent.
 
 > [!IMPORTANT]
 > Communicate through issues and PRs and deliver a working deployment.
@@ -56,36 +49,34 @@ Evaluate LLM answers critically, and verify them against credible sources such a
 
 By the end of this lab, you should be able to:
 
-- Explore a REST API using `Swagger UI`.
-- Authenticate API requests using an API key.
-- Examine a database using `pgAdmin`.
-- Debug a broken endpoint by tracing code and comparing to the database schema.
-- Implement a new endpoint by following an existing reference implementation.
-- Deploy a service with API key authentication.
-- Harden a Linux server (firewall, `fail2ban`, SSH restrictions).
+- Deploy a back-end service to a remote VM.
+- Use browser developer tools to inspect `HTTP` requests.
+- Examine the request path from `Swagger` through the `API` to the database.
+- Construct unit and end-to-end tests for boundary-value cases.
+- Diagnose bugs from failing test output and apply fixes.
+- Use an AI coding agent to generate and refine tests.
+- Differentiate between a dev server and production static files.
+- Use an AI coding agent to modify front-end code and observe the result.
 
 In simple words, you should be able to say:
 >
-> 1. I explored an API using Swagger and authenticated with an API key!
-> 2. I debugged a broken endpoint by comparing the code to the database!
-> 3. I implemented a new endpoint by following an existing pattern!
-> 4. I deployed a secured service on a hardened VM!
+> 1. I redeployed the system and observed requests flowing from Swagger to the API to the database!
+> 2. I wrote tests, found bugs, and fixed them!
+> 3. I added a front-end and modified it using an AI coding agent!
 
 ## Tasks
 
 ### Prerequisites
 
 1. Complete the [lab setup](./lab/tasks/setup.md)
-2. (Optional) Check the [repo index](./index.md)
+2. Set up an [AI coding agent](./wiki/coding-agents.md)
 
 ### Required
 
-1. [Explore the API](./lab/tasks/required/task-1.md)
-2. [Enable and debug the interactions endpoint](./lab/tasks/required/task-2.md)
-3. [Implement the learners endpoint](./lab/tasks/required/task-3.md)
-4. [Deploy to a hardened VM](./lab/tasks/required/task-4.md)
+1. [Observe system component interaction](./lab/tasks/required/task-1.md)
+2. [Back-end testing](./lab/tasks/required/task-2.md)
+3. [Add front-end](./lab/tasks/required/task-3.md)
 
 ### Optional
 
-1. [Implement the `/outcomes` endpoint](./lab/tasks/optional/task-1.md)
-2. [Set up CI with `GitHub Actions`](./lab/tasks/optional/task-2.md)
+1. [Set up CI/CD with `GitHub Actions`](./lab/tasks/optional/task-1.md)
