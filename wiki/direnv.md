@@ -1,5 +1,7 @@
 # `direnv`
 
+<h2>Table of contents</h2>
+
 - [What is `direnv`](#what-is-direnv)
 - [Set up `direnv`](#set-up-direnv)
   - [Install `direnv`](#install-direnv)
