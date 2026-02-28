@@ -51,7 +51,7 @@ Docs:
 - Each section is self-contained and linkable (task docs link to `wiki/<file>.md#<section>`).
 - Start every wiki file with a `## What is <Tool>` section that defines the tool/concept in 1–3 sentences and includes a link to official docs.
 - Provide both explanation and how-to instructions.
-- Link to other wiki sections whenever a concept appears for the first time in a section (see conventions-common.md §4.8).
+- Link to other wiki sections whenever a concept appears for the first time in a section (see common.md §4.8).
 - Use `<h2>Table of contents</h2>` (HTML) so the ToC heading itself doesn't appear in the auto-generated ToC.
 - When an operation can be done multiple ways, list them as options: "Use any of the following methods:"
 - Vendor instructions that aren't good enough anywhere else (e.g., rewrite unclear official docs).

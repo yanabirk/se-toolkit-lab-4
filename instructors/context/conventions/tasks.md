@@ -147,7 +147,7 @@ When multiple actions serve a single logical goal, group them under one step. Wr
    3. Fill in the values.
 ```
 
-When actions don't share a logical goal, flatten them into separate top-level steps (see conventions-common.md §4.1).
+When actions don't share a logical goal, flatten them into separate top-level steps (see common.md §4.1).
 
 ----
 
